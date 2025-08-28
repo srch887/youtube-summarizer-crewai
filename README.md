@@ -13,7 +13,8 @@ The pipeline runs sequentially, ensuring **clean, accurate, and well-structured 
 
 ## Project Structure
 ```bash
-youtube_summary.py # Main script (uv-compatible)
+youtube_summary.py # Main script
+app.py # FastAPI server
 .env # Environment variables (YouTube link, API keys)
 README.md # Documentation
 ```
@@ -28,7 +29,8 @@ README.md # Documentation
 - **Summarizer Agent** → Writes structured summaries with headers  
 - **Editor Agent** → Proofreads + fact-checks summary against transcript  
 - **Sequential CrewAI Workflow** → Agents execute in order  
-- **uv-compatible** → Run without manual virtualenv setup  
+- **FastAPI Integration** → REST API built with **FastAPI** for simple endpoints, async support, and deployment convenience  
+- **Powered by Gemini** → Uses **Google’s `gemini-2.0-flash` LLM** for reasoning, summarization, and editing
 
 ---
 
@@ -63,11 +65,17 @@ README.md # Documentation
 ```bash
 pip install -r requirements.txt
 ```
-### 2. Run the local server
+### 2. Set Environment Variables
+
+Create a .env file:
+```bash
+GEMINI_API_KEY="your_api_key_here"
+```
+### 3. Run the local server
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000 
 ```
-### 3. Hit the API on an HTTP client
+### 4. Hit the API on an HTTP client
 ```
 curl -X POST "https://youtube-summarizer-crewai.onrender.com/summarize" \
   -H "Content-Type: application/json" \
