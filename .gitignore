@@ -2,3 +2,4 @@
 .venv
 .vscode
 youtube_summary.md
+__pycache__

@@ -154,9 +154,9 @@ crew = Crew(
 )
 
 
-if __name__ == '__main__':
-    url = input()
-    result = crew.kickoff(inputs={'youtube_link': url})
+# if __name__ == '__main__':
+#     url = input()
+#     result = crew.kickoff(inputs={'youtube_link': url})
 
-    with open("youtube_summary.md", "w", encoding="utf-8") as f:
-        f.write(result.raw)
+#     with open("youtube_summary.md", "w", encoding="utf-8") as f:
+#         f.write(result.raw)
