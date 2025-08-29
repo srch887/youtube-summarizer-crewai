@@ -77,7 +77,7 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 ### 4. Hit the API on an HTTP client
 ```
-curl -X POST "https://youtube-summarizer-crewai.onrender.com/summarize" \
+curl -X POST "http://localhost:8000/summarize" \
   -H "Content-Type: application/json" \
   -d '{
     "youtube_link": "https://www.youtube.com/watch?v=XB4MIexjvY0"
